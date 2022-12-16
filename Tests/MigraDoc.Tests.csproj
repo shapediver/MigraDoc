@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Sdk Name="Microsoft.NET.Sdk" />
+  <Sdk Name="Microsoft.Build.CentralPackageVersions" />
+  <Import Project="../../CommonSettingsSdkProject.csproj" />
+  <Import Project="../../BuildConfigurations.csproj" />
+  <Import Project="../../CommonReferencesTesting.csproj" />
+  <PropertyGroup>
+    <ProjectGuid>{B3474461-5C03-442B-800C-4ACC4DDEFC2B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MigraDoc.Tests</RootNamespace>
+    <AssemblyName>MigraDoc.Tests</AssemblyName>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <Description>Tests for MigraDoc</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TemplateTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MigraDoc\src\MigraDoc.DocumentObjectModel-gdi\MigraDoc.DocumentObjectModel-gdi.csproj" />
+    <ProjectReference Include="..\MigraDoc\src\MigraDoc.Rendering-gdi\MigraDoc.Rendering-gdi.csproj" />
+    <ProjectReference Include="..\PDFsharp\src\PdfSharp-gdi\PdfSharp-gdi.csproj" />
+    <ProjectReference Include="..\PDFsharp\src\PdfSharp.Charting-gdi\PdfSharp.Charting-gdi.csproj" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="../../CommonSettingsFinal.csproj" />
+</Project>
