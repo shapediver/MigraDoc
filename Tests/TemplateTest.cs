@@ -14,7 +14,7 @@ namespace MigraDoc.Tests
     {
         static string TestDirectory;
 
-        static string TestText = "What a loooong test text.";
+        static string TestText = "What an extraaaaaloooooooong test text.";
         static string TestTextLong;
 
         /// <summary>
@@ -197,20 +197,21 @@ namespace MigraDoc.Tests
                 tab.Borders.Color = MigraDoc.DocumentObjectModel.Colors.Transparent;
                 tab.Borders.Width = 0;
 
-                tab.LeftPadding = 0;
-                tab.RightPadding = 0;
+                tab.LeftPadding = 0.2;
+                tab.RightPadding = 0.2;
                 tab.TopPadding = 0;
                 tab.BottomPadding = 0;
 
                 tab.Format.Alignment = MigraDoc.DocumentObjectModel.ParagraphAlignment.Left;
+                tab.Format.FirstLineIndent = 0;
                 tab.Format.Font.Color = new MigraDoc.DocumentObjectModel.Color(0, 0, 0);
                 tab.Format.Font.Name = "Times New";
                 tab.Format.Font.Size = 1;
-
+             
                 tab.Rows.Height = rectHeight;
                 tab.Rows.HeightRule = DocumentObjectModel.Tables.RowHeightRule.Exactly;
                 tab.Rows.LeftIndent = 0;
-                tab.Rows.VerticalAlignment = MigraDoc.DocumentObjectModel.Tables.VerticalAlignment.Top; ;
+                tab.Rows.VerticalAlignment = MigraDoc.DocumentObjectModel.Tables.VerticalAlignment.Top;
 
                 var col = tab.AddColumn(rectWidth);
                 var row = tab.AddRow();
